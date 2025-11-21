@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./mastra2.db"
+}
+
+model Wallet {
+  id             String   @id @default(cuid())
+  telegramId     String   @unique
+  username       String?  @unique
+  address        String   // EVM 0x… address
+  accountId      String   // Hedera Account ID e.g., "0.0.123456"
+  publicKey      String   // Hedera public key hex
+  privateKey     String   // Hedera ECDSA key DER encrypted
+  evmPrivateKey  String   // EVM-compatible private key encrypted
+  createdAt      DateTime @default(now())
+
+  associatedTokens AssociatedToken[]
+}
+
+model AssociatedToken {
+  id        String   @id @default(cuid())
+  wallet    Wallet   @relation(fields: [walletId], references: [id])
+  walletId  String
+  tokenId   String   // e.g., "0.0.5555"
+}
