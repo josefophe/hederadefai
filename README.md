@@ -25,7 +25,7 @@ The bot helps users:
 * Buy Nigerian airtime
 * View balances
 * Retrieve wallet addresses
-* Unlock premium AI signals using Hedera x402
+* Unlock premium AI Creator Economy using Hedera x402
 * (Coming soon) Token swaps, airdrops, and more
 
 Powered by:
@@ -203,7 +203,7 @@ Buy Nigerian airtime using hUSDT (via Reloadly).
 
 ---
 
-# 💰 x402-Powered Paid Trading Signals**
+# 💰 x402-Powered Paid Trading Signals Example**
 
 ### `/paidsignal`
 
@@ -211,7 +211,7 @@ Unlock premium trading signals using Hedera x402 micropayments.
 
 Flow:
 
-1. User runs `/paid-signal`
+1. User runs `/paidsignal`
 2. Bot creates x402 payment request
 3. User pays in hUSDT
 4. Bot verifies payment
